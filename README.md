@@ -31,4 +31,3 @@ No made-up ratings, warranties, reviews or inspection promises are included. Unk
 WhatsApp links open a draft in the visitor's own WhatsApp session; this website does not send messages or collect leads in a database. No reservation, payment, email delivery or inventory CMS backend is included.
 
 See [IMPROVEMENTS.md](IMPROVEMENTS.md) for the review, priorities and source references.
-

@@ -1,0 +1,1 @@
+{"name":"luxedrive","version":"1.0.0","private":true,"description":"Polished LuxeDrive website concept","scripts":{"start":"node server.mjs","check":"node --check dist/app.js"}}
