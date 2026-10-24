@@ -1,0 +1,34 @@
+# LuxeDrive
+
+A responsive redesign concept for https://www.luxedrive.com.my, prepared on 24 October 2026. This is a standalone replacement frontend, not an edit to the existing NEWPAGES website. No domain or production hosting changes have been made.
+
+## Preview
+
+Requires Node.js 18 or newer. No package installation or build is required.
+
+```sh
+node server.mjs
+```
+
+Open http://127.0.0.1:4173. To check JavaScript syntax, run `node --check dist/app.js`. Deploy the `dist` directory to a static host. GitHub stores the source; hosting configuration and a domain cutover are separate steps.
+
+## Features
+
+- Black-and-gold editorial design, responsive layouts and mobile menu.
+- Search, category filtering and sorting for six selected vehicles.
+- Accessible vehicle detail dialogs with original listing links.
+- Vehicle-specific WhatsApp enquiries using the business's published number.
+- Editable, illustrative flat-rate repayment calculator.
+- Showroom contact information, directions and consignment enquiry.
+- Local image assets, lazy-loaded listing photos and reduced-motion support.
+
+## Content and maintenance
+
+Edit the `vehicles` array in `dist/app.js` to update stock, prices, specifications and listing URLs. This is a static snapshot, not a live inventory integration. The vehicle photos, logo and hero asset originate from LuxeDrive's public website and are retained for this redesign; confirm the business's rights before wider redistribution. Google Fonts is the only external rendering dependency and has local system-font fallbacks.
+
+No made-up ratings, warranties, reviews or inspection promises are included. Unknown specifications are explicitly marked for enquiry. The BMW 420i has a year discrepancy in the source page, disclosed in the detail dialog. Prices, availability, vehicle details, company contact details and showroom hours require business confirmation before launch. The finance calculator illustrates a flat-rate formula and does not represent an approved financing offer.
+
+WhatsApp links open a draft in the visitor's own WhatsApp session; this website does not send messages or collect leads in a database. No reservation, payment, email delivery or inventory CMS backend is included.
+
+See [IMPROVEMENTS.md](IMPROVEMENTS.md) for the review, priorities and source references.
+
