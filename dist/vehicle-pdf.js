@@ -35,9 +35,9 @@
       doc.addImage(item.data, 'JPEG', x + (width - w) / 2, top + (height - h) / 2, w, h);
     };
     page();
+    photo(photos[0] || {}, 16, y, 178, 78); y += 87;
     paragraph(`${car.year} ${car.name}`, 22, true);
     paragraph(price(car.price), 19, true);
-    photo(photos[0] || {}, 16, y, 178, 78); y += 87;
     const rows = [['Stock ID', car.id], ['Make / year', `${car.brand} / ${car.year}`], ['Category / status', `${car.category} / ${car.status}`], ['Engine', car.engine], ['Mileage', car.mileage], ['Transmission', car.transmission], ['Body style', car.body], ['Outlet', car.branch]];
     for (const [label, value] of rows) {
       doc.setFont('helvetica', 'normal'); doc.setFontSize(10);
