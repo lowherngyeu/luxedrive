@@ -3,7 +3,7 @@ let inventoryState=I.read(),vehicles=inventoryState.cars;
 const money=value=>new Intl.NumberFormat('en-MY',{style:'currency',currency:'MYR',maximumFractionDigits:0}).format(value);
 const whatsapp=car=>'https://wa.me/'+(car.branch==='Setia Alam'?'60123878655':'601165699836')+'?text='+encodeURIComponent(`Hello LuxeDrive, I'm interested in the ${car.year} ${car.name}, listed at ${money(car.price)}. Could you confirm availability and arrange a viewing?`);
 const source=car=>car.source||(/^\d+$/.test(car.id)?`https://www.luxedrive.com.my/showproducts/productid/${car.id}/`:'');
-let category='All';
+const category=['Unregistered','Consignment'].includes(document.body.dataset.category)?document.body.dataset.category:'All';
 const grid=document.querySelector('#vehicles');
 function render(){
  const query=document.querySelector('#search').value.trim().toLowerCase(),sort=document.querySelector('#sort').value;
@@ -13,9 +13,9 @@ function render(){
  document.querySelector('#result-count').textContent=`${shown.length} selected vehicle${shown.length===1?'':'s'}`;document.querySelector('#empty').hidden=shown.length>0;
  let banner=document.querySelector('#local-preview-banner');if(inventoryState.custom){if(!banner){banner=document.createElement('div');banner.id='local-preview-banner';banner.className='preview-banner';document.body.prepend(banner);}banner.innerHTML='LOCAL INVENTORY PREVIEW · Changes shown only in this browser. <a href="admin/">Manage inventory ↗</a>';}else banner?.remove();
 }
-document.querySelectorAll('[data-category]').forEach(button=>button.addEventListener('click',()=>{category=button.dataset.category;document.querySelectorAll('[data-category]').forEach(b=>{b.classList.toggle('selected',b===button);b.setAttribute('aria-pressed',String(b===button));});render();}));
+
 document.querySelector('#search').addEventListener('input',render);document.querySelector('#sort').addEventListener('change',render);
-document.querySelector('#reset').addEventListener('click',()=>{document.querySelector('#search').value='';document.querySelector('#sort').value='featured';document.querySelector('[data-category="All"]').click();});
+document.querySelector('#reset').addEventListener('click',()=>{document.querySelector('#search').value='';document.querySelector('#sort').value='featured';render();});
 const dialog=document.querySelector('#vehicle-dialog');
 let activeGallery=null,activePhoto=0;
 function galleryMarkup(v){activeGallery=v;activePhoto=Math.max(0,v.images.indexOf(v.image));return `<div class="detail-gallery"><img id="gallery-main" src="${h(v.image)}" alt="${h(v.name)} — photo ${activePhoto+1}"><div class="gallery-footer"><span id="gallery-counter" aria-live="polite">Photo ${activePhoto+1} of ${v.images.length}</span>${v.images.length>1?'<span>Select a photo below</span>':''}</div><div class="gallery-thumbnails" aria-label="Vehicle photo gallery">${v.images.map((src,index)=>`<button type="button" data-gallery-photo="${index}" aria-label="View photo ${index+1}" aria-pressed="${index===activePhoto}"><img src="${h(src)}" alt="" loading="lazy"></button>`).join('')}</div></div>`;}
@@ -31,14 +31,14 @@ const menu=document.querySelector('.menu');
 menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));document.querySelector('#navigation').classList.toggle('open',open);});
 document.querySelectorAll('#navigation a').forEach(link=>link.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');document.querySelector('#navigation').classList.remove('open');}));
 function calculate(){
-  const form=document.querySelector('#finance-form');
+  const form=document.querySelector('#finance-form');if(!form)return;
   if(!form.checkValidity()){document.querySelector('#monthly').textContent='Check your inputs';document.querySelector('#finance-summary').textContent='Enter values within the indicated ranges.';return;}
   const price=Number(document.querySelector('#price').value),deposit=Number(document.querySelector('#deposit').value),years=Number(document.querySelector('#years').value),rate=Number(document.querySelector('#rate').value);
   const principal=price*(1-deposit/100),interest=principal*rate/100*years;
   document.querySelector('#monthly').textContent=money((principal+interest)/(years*12))+' / mo';
   document.querySelector('#finance-summary').textContent=`${money(principal)} financed · ${years*12} months · ${money(interest)} illustrative interest`;
 }
-document.querySelector('#finance-form').addEventListener('input',calculate);
-document.querySelector('#finance-form').addEventListener('change',calculate);
-document.querySelector('#finance-form').addEventListener('submit',event=>event.preventDefault());
+document.querySelector('#finance-form')?.addEventListener('input',calculate);
+document.querySelector('#finance-form')?.addEventListener('change',calculate);
+document.querySelector('#finance-form')?.addEventListener('submit',event=>event.preventDefault());
 render();calculate();
