@@ -28,7 +28,12 @@ window.addEventListener('storage',event=>{if(event.key===I.KEY){inventoryState=I
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
 const menu=document.querySelector('.menu');
-menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));document.querySelector('#navigation').classList.toggle('open',open);});
+const collectionDropdown=document.querySelector('#collection-dropdown');
+document.addEventListener('click',event=>{if(collectionDropdown?.open&&!collectionDropdown.contains(event.target))collectionDropdown.open=false;});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&collectionDropdown?.open){collectionDropdown.open=false;collectionDropdown.querySelector('summary').focus();}});
+collectionDropdown?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{collectionDropdown.open=false;}));
+
+menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));document.querySelector('#navigation').classList.toggle('open',open);if(!open&&collectionDropdown)collectionDropdown.open=false;});
 document.querySelectorAll('#navigation a').forEach(link=>link.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');document.querySelector('#navigation').classList.remove('open');}));
 function calculate(){
   const form=document.querySelector('#finance-form');if(!form)return;
