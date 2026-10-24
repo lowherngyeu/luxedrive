@@ -6,3 +6,5 @@
 .hero-car{height:auto}
 @media(min-width:1101px){.hero-car{width:72%;right:-15%;bottom:90px}.hero-copy h1{font-size:clamp(38px,3.8vw,61px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+.photo-count{position:absolute;right:10px;bottom:10px;background:#141910df;color:#eee9dc;font-size:9px;padding:4px 8px}.detail-gallery{background:var(--surface);min-width:0;align-self:start}.detail-gallery>#gallery-main{display:block;width:100%;height:340px;object-fit:contain;background:#10130f}.gallery-footer{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;color:var(--muted);font-size:10px}.gallery-thumbnails{display:flex;gap:8px;padding:5px 14px 15px;overflow-x:auto}.gallery-thumbnails button{flex:0 0 65px;width:65px;height:52px;border:2px solid transparent;padding:0;background:#252a20}.gallery-thumbnails button[aria-pressed=true]{border-color:var(--gold)}.gallery-thumbnails img{width:100%;height:100%;object-fit:cover}@media(max-width:700px){.detail-gallery>#gallery-main{height:230px}.gallery-thumbnails button{flex-basis:58px;width:58px;height:47px}}

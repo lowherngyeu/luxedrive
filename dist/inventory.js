@@ -33,9 +33,12 @@ const defaults = [
     if(!Number.isInteger(year) || year<1900 || year>new Date().getFullYear()+2) throw new Error('Enter a valid vehicle year.');
     if(input.price==='' || input.price==null || !Number.isFinite(price) || price<=0 || price>100000000) throw new Error('Enter a price greater than RM0 and no more than RM100,000,000.');
     if(!categories.includes(input.category)) throw new Error('Choose a valid category.');
-    const image=safeImage(input.image); if(!image) throw new Error('Add a photo or a valid HTTPS image URL.');
+    const supplied=Array.isArray(input.images)?input.images:[input.image];
+    if(supplied.length<1 || supplied.length>12) throw new Error('Add between 1 and 12 vehicle photos.');
+    const images=[...new Set(supplied.map(value=>{const safe=safeImage(value);if(!safe)throw new Error('Every photo must be a valid upload or HTTPS image URL.');return safe;}))];
+    const image=images.includes(input.image)?input.image:images[0];
     if(input.source && !safeSource(input.source)) throw new Error('Original listing link must start with https://.');
-    return {id:text('id',100)||crypto.randomUUID(),name:text('name'),brand:text('brand',80),year,price,category:input.category,image,
+    return {id:text('id',100)||crypto.randomUUID(),name:text('name'),brand:text('brand',80),year,price,category:input.category,image,images,
       engine:text('engine')||'Enquire for specifications',mileage:text('mileage')||'Enquire for mileage',transmission:text('transmission')||'Confirm with team',body:text('body')||'Confirm with team',note:text('note',3000),source:safeSource(input.source),
       status:statuses.includes(input.status)?input.status:'Available',branch:branches.includes(input.branch)?input.branch:'Bukit Jalil'};
   }

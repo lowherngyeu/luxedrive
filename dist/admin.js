@@ -2,7 +2,7 @@
   'use strict';
   const I=window.LuxeInventory,$=s=>document.querySelector(s),h=I.escape;
   if(!I.PREVIEW_MODE){$('#preview-notice').hidden=true;$('#workspace').hidden=true;$('#locked').hidden=false;return;}
-  let state=I.read(),cars=state.cars,currentImage='',photoBusy=false,confirmAction=null,dirty=false;
+  let state=I.read(),cars=state.cars,currentImage='',currentPhotos=[],photoBusy=false,confirmAction=null,dirty=false;
   const money=value=>new Intl.NumberFormat('en-MY',{style:'currency',currency:'MYR',maximumFractionDigits:0}).format(value);
   function message(text){$('#admin-message').textContent=text;}
   function render(){
@@ -14,32 +14,43 @@
   }
   function persist(next,notice){cars=I.write(next);render();message(notice);}
   const fields=['name','brand','year','price','category','status','branch','engine','mileage','transmission','body','source','note'];
-  function showPhoto(){const image=$('#photo-preview');image.hidden=!currentImage;$('#photo-placeholder').hidden=!!currentImage;if(currentImage)image.src=currentImage;else image.removeAttribute('src');}
+  function showPhoto(){
+    if(!currentPhotos.includes(currentImage))currentImage=currentPhotos[0]||'';
+    const image=$('#photo-preview');image.hidden=!currentImage;$('#photo-placeholder').hidden=!!currentImage;if(currentImage)image.src=currentImage;else image.removeAttribute('src');
+    $('#photo-count').textContent=currentPhotos.length+' / 12 photos · Main photo appears on the listing card.';
+    $('#photo-gallery').innerHTML=currentPhotos.map((src,index)=>`<div class="photo-tile"><img src="${h(src)}" alt="Vehicle photo ${index+1}"><button type="button" class="main-photo-button" data-main="${index}" aria-pressed="${src===currentImage}" aria-label="Set photo ${index+1} as main">${src===currentImage?'★ Main photo':'Set as main'}</button><button type="button" class="remove-photo-button" data-remove-photo="${index}" aria-label="Remove photo ${index+1}">×</button></div>`).join('');
+  }
+  function addPhoto(src){if(currentPhotos.includes(src))return false;if(currentPhotos.length>=12)throw new Error('Each vehicle can have up to 12 photos. Remove a photo to add another.');currentPhotos.push(src);if(!currentImage)currentImage=src;dirty=true;return true;}
+  $('#photo-gallery').addEventListener('click',event=>{if(photoBusy)return;const main=event.target.closest('[data-main]'),remove=event.target.closest('[data-remove-photo]');if(main){currentImage=currentPhotos[Number(main.dataset.main)];dirty=true;showPhoto();}else if(remove){currentPhotos.splice(Number(remove.dataset.removePhoto),1);dirty=true;showPhoto();}});
+  $('#add-photo-url').addEventListener('click',()=>{if(photoBusy)return;const src=I.safeImage($('#image-url').value.trim());if(!src||!src.startsWith('https:')){$('#photo-status').textContent='Enter a valid HTTPS photo URL.';return;}try{const added=addPhoto(src);showPhoto();$('#image-url').value='';$('#photo-status').textContent=added?'Photo added. Choose its main-photo button if you want it on the listing card.':'This photo is already in the gallery.';}catch(error){$('#photo-status').textContent=error.message;}});
+
   function edit(id){
     const c=id?cars.find(car=>car.id===id):null;if(id&&!c)return;
     $('#car-form').reset();$('#form-error').textContent='';$('#photo-status').textContent='';$('#car-id').value=c?.id||'';$('#editor-title').textContent=c?'Edit vehicle':'Add vehicle';
     $('#car-year').max=new Date().getFullYear()+2;
     fields.forEach(key=>{const input=$('#car-'+key);if(c)input.value=c[key]??'';else if(key==='year')input.value=new Date().getFullYear();});
-    currentImage=c?.image||'';$('#image-url').value=currentImage.startsWith('https:')?currentImage:'';showPhoto();dirty=false;photoBusy=false;$('#save-car').disabled=false;$('#editor').showModal();
+    currentPhotos=c?[...c.images]:[];currentImage=c?.image||'';$('#image-url').value='';showPhoto();dirty=false;photoBusy=false;$('#save-car').disabled=false;$('#editor').showModal();
   }
   function ask(title,text,action){$('#confirm-title').textContent=title;$('#confirm-text').textContent=text;confirmAction=action;$('#confirm-dialog').showModal();}
-  function closeEditor(){if(dirty){ask('Discard these changes?','Unsaved vehicle details will be discarded.',()=>{$('#editor').close();dirty=false;});}else $('#editor').close();}
+  function closeEditor(){if(photoBusy){$('#photo-status').textContent='Please wait for photos to finish processing.';return;}if(dirty){ask('Discard these changes?','Unsaved vehicle details will be discarded.',()=>{$('#editor').close();dirty=false;});}else $('#editor').close();}
   $('#add-car').addEventListener('click',()=>edit());$('#cancel-edit').addEventListener('click',closeEditor);$('.dialog-close').addEventListener('click',closeEditor);
-  $('#editor').addEventListener('cancel',event=>{if(dirty){event.preventDefault();closeEditor();}});
+  $('#editor').addEventListener('cancel',event=>{if(dirty||photoBusy){event.preventDefault();closeEditor();}});
   $('#car-form').addEventListener('input',()=>{dirty=true;});
-  $('#image-url').addEventListener('input',()=>{const value=$('#image-url').value.trim();if(value){const safe=I.safeImage(value);currentImage=safe;showPhoto();$('#photo-status').textContent=safe?'Using photo URL.':'Use a valid HTTPS image URL.';}else{currentImage='';showPhoto();}});
   $('#photo-preview').addEventListener('error',()=>{$('#photo-status').textContent='Photo could not be loaded. Check the URL or upload a photo.';});
   $('#photo-file').addEventListener('change',async()=>{
-    const file=$('#photo-file').files[0];if(!file)return;
-    if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>10*1024*1024){$('#photo-status').textContent='Choose a JPEG, PNG or WebP photo under 10 MB.';return;}
-    photoBusy=true;$('#save-car').disabled=true;$('#photo-status').textContent='Preparing photo…';let bitmap;
-    try{bitmap=await createImageBitmap(file);const scale=Math.min(1,1200/Math.max(bitmap.width,bitmap.height));const canvas=document.createElement('canvas');canvas.width=Math.round(bitmap.width*scale);canvas.height=Math.round(bitmap.height*scale);const ctx=canvas.getContext('2d');ctx.fillStyle='#171a14';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);currentImage=canvas.toDataURL('image/jpeg',.78);$('#image-url').value='';showPhoto();dirty=true;$('#photo-status').textContent='Photo ready. Save the vehicle to keep it.';}
-    catch{$('#photo-status').textContent='This photo could not be read. Try another JPEG, PNG or WebP.';}
-    finally{bitmap?.close();photoBusy=false;$('#save-car').disabled=false;}
+    const files=Array.from($('#photo-file').files);$('#photo-file').value='';if(!files.length||photoBusy)return;
+    if(currentPhotos.length+files.length>12){$('#photo-status').textContent='A vehicle can have up to 12 photos. Select fewer files or remove existing photos.';return;}
+    photoBusy=true;$('#save-car').disabled=true;$('#photo-file').disabled=true;$('#add-photo-url').disabled=true;let added=0,failed=0;
+    try{for(const file of files){let bitmap;$('#photo-status').textContent='Preparing photo '+(added+failed+1)+' of '+files.length+'…';
+      try{if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>10*1024*1024)throw new Error('Invalid photo');
+        bitmap=await createImageBitmap(file);const scale=Math.min(1,1000/Math.max(bitmap.width,bitmap.height));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(bitmap.width*scale));canvas.height=Math.max(1,Math.round(bitmap.height*scale));const ctx=canvas.getContext('2d');ctx.fillStyle='#171a14';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);if(addPhoto(canvas.toDataURL('image/jpeg',.72)))added++;
+      }catch{failed++;}finally{bitmap?.close();}
+    }showPhoto();$('#photo-status').textContent=added+' photo(s) added.'+(failed?' '+failed+' file(s) could not be read; use JPEG, PNG or WebP under 10 MB.':' Choose a main photo, then save the vehicle.');
+    }finally{photoBusy=false;$('#save-car').disabled=false;$('#photo-file').disabled=false;$('#add-photo-url').disabled=false;}
   });
   $('#car-form').addEventListener('submit',event=>{
     event.preventDefault();if(photoBusy)return;$('#form-error').textContent='';
-    try{const id=$('#car-id').value;const data={id:id||crypto.randomUUID(),image:currentImage};fields.forEach(key=>data[key]=$('#car-'+key).value);const car=I.clean(data);let next;
+    try{const id=$('#car-id').value;if($('#image-url').value.trim())throw new Error('Click Add URL photo to include the photo link, or clear the link field before saving.');const data={id:id||crypto.randomUUID(),image:currentImage,images:currentPhotos};fields.forEach(key=>data[key]=$('#car-'+key).value);const car=I.clean(data);let next;
       if(id){if(!cars.some(c=>c.id===id))throw new Error('This listing was deleted in another tab. Close the editor and reload.');next=cars.map(c=>c.id===id?car:c);}else next=[car,...cars];
       persist(next,`${car.name} ${id?'updated':'added'} in this browser’s preview.`);dirty=false;$('#editor').close();
     }catch(error){$('#form-error').textContent=error.message;}
