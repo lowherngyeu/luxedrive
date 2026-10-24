@@ -17,3 +17,5 @@
 
 /* Larger, consistent navigation labels on desktop and mobile. */
 .header #navigation,.header #navigation .collection-dropdown summary,.header #navigation .collection-options a{font-size:16px;font-weight:500}.header .menu{font-size:16px}
+
+.pdf-button{background:transparent;border:1px solid var(--line);color:var(--gold);padding:10px 14px;font-size:13px;cursor:pointer}.vehicle-card>.pdf-button{width:100%;margin-top:12px}.pdf-button:hover{border-color:var(--gold);background:var(--surface)}.pdf-button:disabled{opacity:.65;cursor:wait}.pdf-status{position:fixed;bottom:76px;right:20px;left:20px;margin:0 auto;max-width:520px;padding:14px 18px;background:var(--surface);color:var(--text);border:1px solid var(--gold);box-shadow:0 5px 25px #0005;z-index:50;font-size:13px}.pdf-status:empty{display:none}

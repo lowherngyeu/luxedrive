@@ -31,3 +31,8 @@ No made-up ratings, warranties, reviews or inspection promises are included. Unk
 WhatsApp links open a draft in the visitor's own WhatsApp session; this website does not send messages or collect leads in a database. No reservation, payment, email delivery or inventory CMS backend is included.
 
 See [IMPROVEMENTS.md](IMPROVEMENTS.md) for the review, priorities and source references.
+
+## Vehicle PDF sheets
+
+Every storefront listing and vehicle detail dialog has a Download PDF button. The PDF contains the current stock ID, asking price, specifications, status, outlet, listing notes, contact number and all vehicle photos (main photo first). It uses the current browser inventory, including preview admin edits. Photos blocked by their host or unavailable after 15 seconds are marked in the PDF and reported after download. jsPDF 4.2.1 is bundled locally under dist/vendor with its MIT license; no PDF service is required.
+
