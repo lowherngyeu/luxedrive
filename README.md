@@ -34,6 +34,6 @@ See [IMPROVEMENTS.md](IMPROVEMENTS.md) for the review, priorities and source ref
 
 ## Vehicle PDF sheets
 
-Every storefront listing and vehicle detail dialog has a Download PDF button. The PDF contains the current stock ID, asking price, specifications, status, outlet, listing notes, contact number and all vehicle photos (main photo first). It uses the current browser inventory, including preview admin edits. Photos blocked by their host or unavailable after 15 seconds are marked in the PDF and reported after download. jsPDF 4.2.1 is bundled locally under dist/vendor with its MIT license; no PDF service is required.
+Every vehicle detail dialog has a Download PDF button. The PDF contains the current stock ID, asking price, specifications, status, outlet, listing notes, contact number and all vehicle photos (main photo first). It uses the current browser inventory, including preview admin edits. Photos blocked by their host or unavailable after 15 seconds are marked in the PDF and reported after download. jsPDF 4.2.1 is bundled locally under dist/vendor with its MIT license; no PDF service is required.
 
 See [IMPORT.md](IMPORT.md) for the 25 October 2026 catalogue import and its validation.
