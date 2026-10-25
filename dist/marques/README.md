@@ -1,0 +1,1 @@
+Car marque SVGs from Simple Icons: Porsche, BMW, Lamborghini and Toyota from version 15.3.0; Mercedes from version 11.15.0. Source: https://github.com/simple-icons/simple-icons. See LICENSE.md. Brand marks retain their respective owners.

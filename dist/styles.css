@@ -22,3 +22,5 @@
 
 /* First-visit logo introduction. Click or press any key to continue immediately. */
 .welcome-splash{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#111310;opacity:1;transition:opacity .38s ease;cursor:pointer}.welcome-splash img{width:clamp(200px,26vw,320px);height:auto;animation:welcome-logo .8s ease-out both;filter:drop-shadow(0 0 24px #d9ba7526)}.welcome-splash.leaving{opacity:0;pointer-events:none}@keyframes welcome-logo{from{opacity:0;transform:translateY(10px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}@media(prefers-reduced-motion:reduce){.welcome-splash{display:none}}
+
+.brand-strip>span.marque{display:flex;align-items:center;justify-content:center;flex:1}.brand-strip .marque img{width:64px;height:54px;object-fit:contain;filter:brightness(0) invert(.78);opacity:.85;transition:opacity .2s}.brand-strip .marque:hover img{opacity:1}@media(max-width:700px){.brand-strip>span.marque{display:flex;flex:0 1 45px}.brand-strip .marque img{width:45px;height:42px}.brand-strip{gap:18px;padding-block:24px}}
