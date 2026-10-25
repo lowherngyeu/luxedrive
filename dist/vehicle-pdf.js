@@ -52,10 +52,6 @@
     y += 4;
     paragraph('Contact: ' + (car.branch === 'Setia Alam' ? '+60 12-387 8655' : '+60 11-6569 9836'));
     paragraph('Prices, availability and specifications are subject to confirmation. This sheet is not a reservation or a binding quotation.', 9);
-    if (car.source) {
-      if (y > 260) next();
-      doc.setFontSize(10); doc.setTextColor(90, 73, 33); doc.textWithLink('View original listing', 16, y, { url: car.source }); doc.setTextColor(32, 38, 28); y += 7;
-    }
     for (let i = 1; i < photos.length; i++) {
       if ((i - 1) % 2 === 0) { next(); paragraph(`${car.year} ${car.name.slice(0, 70)} - photos`, 13, true); }
       const top = (i - 1) % 2 === 0 ? 55 : 165;
