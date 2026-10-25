@@ -3,15 +3,30 @@
   const I=window.LuxeInventory,$=s=>document.querySelector(s),h=I.escape;
   if(!I.PREVIEW_MODE){$('#preview-notice').hidden=true;$('#workspace').hidden=true;$('#locked').hidden=false;return;}
   let state=I.read(),cars=state.cars,currentImage='',currentPhotos=[],photoBusy=false,confirmAction=null,dirty=false;
+  const pageSize=20;
+  let currentPage=1;
   const money=value=>new Intl.NumberFormat('en-MY',{style:'currency',currency:'MYR',maximumFractionDigits:0}).format(value);
   function message(text){$('#admin-message').textContent=text;}
   function render(){
     const query=$('#admin-search').value.trim().toLowerCase(),status=$('#status-filter').value,branch=$('#branch-filter').value;
     const shown=cars.filter(c=>(status==='All'||c.status===status)&&(branch==='All'||c.branch===branch)&&`${c.name} ${c.brand} ${c.year}`.toLowerCase().includes(query));
+    const pageCount=Math.max(1,Math.ceil(shown.length/pageSize));
+    currentPage=Math.min(currentPage,pageCount);
+    const start=(currentPage-1)*pageSize,pageCars=shown.slice(start,start+pageSize);
     $('#stats').innerHTML=[['Total vehicles',cars.length],['Available / incoming',cars.filter(c=>['Available','Incoming'].includes(c.status)).length],['Reserved',cars.filter(c=>c.status==='Reserved').length],['Sold / draft',cars.filter(c=>['Sold','Draft'].includes(c.status)).length]].map(([label,n])=>`<div><span>${label}</span><strong>${n}</strong></div>`).join('');
-    $('#admin-list').innerHTML=shown.map(c=>`<article class="admin-car"><img src="${h(c.image)}" alt="${h(c.name)}" loading="lazy"><div><p>${c.year} · ${h(c.brand)} · ${h(c.category)}</p><h2>${h(c.name)}</h2><span class="status-pill ${c.status.toLowerCase()}">${h(c.status)}</span></div><div class="price-cell"><p class="car-price">${money(c.price)}</p></div><div class="outlet-cell"><p>${h(c.branch)}</p></div><div class="car-actions"><button data-edit="${h(c.id)}" aria-label="Edit ${h(c.name)}">Edit</button><button class="delete" data-delete="${h(c.id)}" aria-label="Delete ${h(c.name)}">Delete</button></div></article>`).join('');
-    $('#admin-count').textContent=`${shown.length} of ${cars.length} vehicle${cars.length===1?'':'s'}`;$('#admin-empty').hidden=shown.length>0;
+    $('#admin-list').innerHTML=pageCars.map(c=>`<article class="admin-car"><img src="${h(c.image)}" alt="${h(c.name)}" loading="lazy"><div><p>${c.year} · ${h(c.brand)} · ${h(c.category)}</p><h2>${h(c.name)}</h2><span class="status-pill ${c.status.toLowerCase()}">${h(c.status)}</span></div><div class="price-cell"><p class="car-price">${money(c.price)}</p></div><div class="outlet-cell"><p>${h(c.branch)}</p></div><div class="car-actions"><button data-edit="${h(c.id)}" aria-label="Edit ${h(c.name)}">Edit</button><button class="delete" data-delete="${h(c.id)}" aria-label="Delete ${h(c.name)}">Delete</button></div></article>`).join('');
+    $('#admin-count').textContent=shown.length?`Showing ${start+1}–${Math.min(start+pageSize,shown.length)} of ${shown.length} vehicles${shown.length!==cars.length?` (${cars.length} total)`:''}`:`0 of ${cars.length} vehicles`;$('#admin-empty').hidden=shown.length>0;
+    const pages=Array.from({length:pageCount},(_,i)=>i+1).filter(p=>pageCount<=7||p===1||p===pageCount||Math.abs(p-currentPage)<=1);
+    let last=0;
+    const numbers=pages.map(p=>{const gap=last&&p-last>1?'<span aria-hidden="true">…</span>':'';last=p;return gap+`<button type="button" data-admin-page="${p}" aria-label="Page ${p}"${p===currentPage?' aria-current="page"':''}>${p}</button>`;}).join('');
+    document.querySelectorAll('.admin-pagination').forEach(nav=>{nav.hidden=pageCount<=1;nav.innerHTML=`<span>Page ${currentPage} of ${pageCount}</span><div><button type="button" data-admin-page="${currentPage-1}"${currentPage===1?' disabled':''}>Previous</button>${numbers}<button type="button" data-admin-page="${currentPage+1}"${currentPage===pageCount?' disabled':''}>Next</button></div>`;});
   }
+  document.querySelectorAll('.admin-pagination').forEach(nav=>nav.addEventListener('click',event=>{
+    const button=event.target.closest('[data-admin-page]');if(!button||button.disabled)return;
+    currentPage=Number(button.dataset.adminPage);render();
+    const top=$('#admin-pagination');top.scrollIntoView({block:'start'});
+    top.querySelector('[aria-current="page"]')?.focus({preventScroll:true});
+  }));
   function persist(next,notice){cars=I.write(next);render();message(notice);}
   const fields=['name','brand','year','price','category','status','branch','engine','mileage','transmission','body','source','note'];
   function showPhoto(){
@@ -52,6 +67,7 @@
     event.preventDefault();if(photoBusy)return;$('#form-error').textContent='';
     try{const id=$('#car-id').value;if($('#image-url').value.trim())throw new Error('Click Add URL photo to include the photo link, or clear the link field before saving.');const data={id:id||crypto.randomUUID(),image:currentImage,images:currentPhotos};fields.forEach(key=>data[key]=$('#car-'+key).value);const car=I.clean(data);let next;
       if(id){if(!cars.some(c=>c.id===id))throw new Error('This listing was deleted in another tab. Close the editor and reload.');next=cars.map(c=>c.id===id?car:c);}else next=[car,...cars];
+      if(!id)currentPage=1;
       persist(next,`${car.name} ${id?'updated':'added'} in this browser’s preview.`);dirty=false;$('#editor').close();
     }catch(error){$('#form-error').textContent=error.message;}
   });
@@ -59,8 +75,8 @@
   $('#confirm-cancel').addEventListener('click',()=>{$('#confirm-dialog').close();confirmAction=null;});
   $('#confirm-dialog').addEventListener('cancel',()=>{confirmAction=null;});
   $('#confirm-ok').addEventListener('click',()=>{const action=confirmAction;confirmAction=null;$('#confirm-dialog').close();try{action?.();}catch(error){message(error.message);}});
-  for(const selector of ['#admin-search','#status-filter','#branch-filter'])$(selector).addEventListener(selector==='#admin-search'?'input':'change',render);
-  $('#clear-filters').addEventListener('click',()=>{$('#admin-search').value='';$('#status-filter').value='All';$('#branch-filter').value='All';render();});
+  for(const selector of ['#admin-search','#status-filter','#branch-filter'])$(selector).addEventListener(selector==='#admin-search'?'input':'change',()=>{currentPage=1;render();});
+  $('#clear-filters').addEventListener('click',()=>{$('#admin-search').value='';$('#status-filter').value='All';$('#branch-filter').value='All';currentPage=1;render();});
   $('#export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),cars},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`luxedrive-inventory-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message('Inventory backup downloaded. Keep it to restore this preview on another browser.');});
   $('#import').addEventListener('click',()=>$('#import-file').click());
   $('#import-file').addEventListener('change',async()=>{const file=$('#import-file').files[0];$('#import-file').value='';if(!file)return;try{if(file.size>8*1024*1024)throw new Error('Backup must be under 8 MB.');const data=JSON.parse(await file.text());if(data.version!==1||!Array.isArray(data.cars)||data.cars.length>500)throw new Error('Choose a valid LuxeDrive inventory backup.');const checked=data.cars.map(I.clean);if(new Set(checked.map(c=>c.id)).size!==checked.length)throw new Error('Backup contains duplicate vehicle IDs.');ask('Replace preview inventory?',`Import ${checked.length} vehicles and replace this browser’s current inventory. Export your current backup first if needed.`,()=>persist(checked,'Inventory backup imported into this browser’s preview.'));}catch(error){message(error instanceof SyntaxError?'This file is not valid JSON.':error.message);}});
