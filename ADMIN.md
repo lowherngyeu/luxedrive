@@ -6,8 +6,8 @@ Open https://lowherngyeu.github.io/luxedrive/admin (GitHub Pages redirects to `/
 
 - Add, edit and delete vehicles, including up to 12 photos per car. Upload several JPEG, PNG or WebP images together (up to 10 MB each), or add HTTPS photo URLs. Select **Set as main** to choose the listing preview image. Remove individual photos; removing the main photo selects the first remaining photo. Vehicle details show a selectable thumbnail gallery. Existing single-photo listings and backups are upgraded automatically.
 - Set price, make, model, year, category, outlet, availability, specifications, original listing link and notes.
-- Filter inventory by status/outlet, search, export a JSON backup, import a backup, or restore the original six vehicles.
-- Available and reserved cars appear on the storefront in the same browser. Sold and draft cars remain in admin only. Cross-tab updates are supported.
+- Filter inventory by status/outlet, search, export a JSON backup, import a backup, or restore the imported stock snapshot.
+- Available, incoming and reserved cars appear on the storefront in the same browser. Sold and draft cars remain in admin only. Cross-tab updates are supported.
 - New Setia Alam listings direct WhatsApp enquiries to that outlet's phone number.
 
 ## Preview storage

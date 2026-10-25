@@ -110,7 +110,9 @@
     busy = true; button.disabled = true; button.setAttribute('aria-busy', 'true');
     const label = button.textContent; button.textContent = 'Preparing PDF...'; status.textContent = 'Preparing vehicle details and photos...';
     try {
-      const sources = [car.image, ...car.images.filter(src => src !== car.image)];
+      const resolved = await window.LuxeInventory.photos(car);
+      const mainIndex = car.images.indexOf(car.image);
+      const sources = [resolved[mainIndex], ...resolved.filter((src, index) => index !== mainIndex)];
       const photos = await Promise.all(sources.map(loadPhoto));
       const doc = build(car, photos);
       const filename = `LuxeDrive-${car.year}-${car.name}-${car.id}`.replace(/[^a-zA-Z0-9_-]+/g, '-');

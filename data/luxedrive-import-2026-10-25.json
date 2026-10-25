@@ -1,0 +1,1187 @@
+{
+  "reviewDate": "2026-10-25",
+  "sources": [
+    "https://www.luxedrive.com.my/ourproducts/cid/672813/cat/Unregistered/",
+    "https://www.luxedrive.com.my/ourproducts/cid/672814/cat/Consignment/"
+  ],
+  "discovered": 69,
+  "imported": 68,
+  "records": [
+    {
+      "id": "6815364",
+      "title": "(Incoming) Unregistered 2023 Land Rover Defender 110S P300",
+      "status": "Incoming",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6815364/cid/672813/incoming-unregistered-2023-land-rover-defender-110s-p300/",
+      "photoCount": 12,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2023",
+        "engine size": "2000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6791218",
+      "title": "(Incoming) Unregistered 2022 Mercedes AMG CLA45S",
+      "status": "Incoming",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6791218/cid/672813/incoming-unregistered-2022-mercedes-amg-cla45s/",
+      "photoCount": 11,
+      "importedPhotos": 11,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "2000cc",
+        "body type": "Sedan",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6788513",
+      "title": "(Incoming) Unregistered 2022 Porsche 911 4 Carrera GTS",
+      "status": "Incoming",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6788513/cid/672813/incoming-unregistered-2022-porsche-911-4-carrera-gts/",
+      "photoCount": 14,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Crayon"
+      },
+      "issues": []
+    },
+    {
+      "id": "6787720",
+      "title": "(Incoming) Unregistered 2022 Porsche 911 GT3 Touring PDK",
+      "status": "Incoming",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6787720/cid/672813/incoming-unregistered-2022-porsche-911-gt3-touring-pdk/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "4000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Grey"
+      },
+      "issues": []
+    },
+    {
+      "id": "6777692",
+      "title": "(Incoming) Unregistered 2022 Porsche 911 Carrera 4S",
+      "status": "Incoming",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6777692/cid/672813/incoming-unregistered-2022-porsche-911-carrera-4s/",
+      "photoCount": 10,
+      "importedPhotos": 10,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Grey"
+      },
+      "issues": []
+    },
+    {
+      "id": "6745498",
+      "title": "Unregistered 2022 Toyota Voxy SZ",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6745498/cid/672813/unregistered-2022-toyota-voxy-sz/",
+      "photoCount": 27,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "2000cc",
+        "body type": "MPV",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6712068",
+      "title": "(BOOKED) Unregistered 2022 Ferrari F8 Tributo",
+      "status": "Reserved",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6712068/cid/672813/booked-unregistered-2022-ferrari-f8-tributo/",
+      "photoCount": 5,
+      "importedPhotos": 5,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "3900cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6689134",
+      "title": "Unregistered 2025 Toyota Vellfire Z Premier",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6689134/cid/672813/unregistered-2025-toyota-vellfire-z-premier/",
+      "photoCount": 32,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2025",
+        "engine size": "2400cc",
+        "body type": "MPV",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6686577",
+      "title": "(Sold) Unregistered 2022 Ferrari 812 GTS Tailor Made",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6686577/cid/672813/sold-unregistered-2022-ferrari-812-gts-tailor-made/",
+      "photoCount": 21,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "6500cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6660520",
+      "title": "(SOLD) Unregistered 2022 Ferrari F8 Tributo",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6660520/cid/672813/sold-unregistered-2022-ferrari-f8-tributo/",
+      "photoCount": 22,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "3900cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": [
+        "No published asking price"
+      ]
+    },
+    {
+      "id": "6640301",
+      "title": "Unregistered 2022 Mini JCW Rebel Green",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6640301/cid/672813/unregistered-2022-mini-jcw-rebel-green/",
+      "photoCount": 29,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "2000cc",
+        "body type": "Hatchback",
+        "engine type": "Petrol",
+        "color": "Rebel Green"
+      },
+      "issues": []
+    },
+    {
+      "id": "6615951",
+      "title": "Unregistered 2022 Porsche Macan 2.0",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6615951/cid/672813/unregistered-2022-porsche-macan-20/",
+      "photoCount": 26,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "2000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6615856",
+      "title": "Unregistered 2023 BMW 420i Grand Coupe M Sport",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6615856/cid/672813/unregistered-2023-bmw-420i-grand-coupe-m-sport/",
+      "photoCount": 29,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2021",
+        "engine size": "2000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6615512",
+      "title": "Unregistered 2021 Mercedes AMG A35",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6615512/cid/672813/unregistered-2021-mercedes-amg-a35/",
+      "photoCount": 30,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2021",
+        "engine size": "2000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6615498",
+      "title": "(SOLD) Unregistered 2021 Porsche 911 Carrera 4S",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6615498/cid/672813/sold-unregistered-2021-porsche-911-carrera-4s/",
+      "photoCount": 31,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2021",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Silver"
+      },
+      "issues": []
+    },
+    {
+      "id": "6612744",
+      "title": "Unregistered 2022 Porsche 718 Cayman",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6612744/cid/672813/unregistered-2022-porsche-718-cayman/",
+      "photoCount": 24,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "2000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Grey"
+      },
+      "issues": []
+    },
+    {
+      "id": "6607219",
+      "title": "(Sold) Unregistered 2023 Porsche Macan",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6607219/cid/672813/sold-unregistered-2023-porsche-macan/",
+      "photoCount": 27,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2023",
+        "engine size": "2000 CC",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6605315",
+      "title": "(Sold) Unregistered 2024 Toyota Vellfire Z Premier",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6605315/cid/672813/sold-unregistered-2024-toyota-vellfire-z-premier/",
+      "photoCount": 30,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2024",
+        "engine size": "2400 CC",
+        "body type": "MPV",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6602647",
+      "title": "Unregistered 2021 BMW M4 Competition RWD",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6602647/cid/672813/unregistered-2021-bmw-m4-competition-rwd/",
+      "photoCount": 23,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2021",
+        "engine size": "3000 CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532360",
+      "title": "Unregistered 2024 BMW M4 Competition X Drive",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532360/cid/672813/unregistered-2024-bmw-m4-competition-x-drive/",
+      "photoCount": 22,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2024",
+        "engine size": "3000 CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6834652",
+      "title": "Used 2015 Bentley Continental GT 4.0 V8",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6834652/cid/672814/used-2015-bentley-continental-gt-40-v8/",
+      "photoCount": 23,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2015",
+        "engine size": "4000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6827343",
+      "title": "Used Lamborghini Gallardo LP560-4 5.2 V10",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6827343/cid/672814/used-lamborghini-gallardo-lp5604-52-v10/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2009",
+        "engine size": "5200cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Green"
+      },
+      "issues": []
+    },
+    {
+      "id": "6812409",
+      "title": "Used 2017 BMW M2",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6812409/cid/672814/used-2017-bmw-m2/",
+      "photoCount": 27,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2017",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Grey"
+      },
+      "issues": []
+    },
+    {
+      "id": "6812303",
+      "title": "Used 2022 Lamborghini Urus",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6812303/cid/672814/used-2022-lamborghini-urus/",
+      "photoCount": 30,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "4000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6798190",
+      "title": "Used 2020 Mercedes AMG CLA45S",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6798190/cid/672814/used-2020-mercedes-amg-cla45s/",
+      "photoCount": 21,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "4000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6798116",
+      "title": "Used 2019 Mercedes AMG GLC63S Coupe Facelift",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6798116/cid/672814/used-2019-mercedes-amg-glc63s-coupe-facelift/",
+      "photoCount": 32,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "4000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6787324",
+      "title": "Used 2016 Porsche Macan",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6787324/cid/672814/used-2016-porsche-macan/",
+      "photoCount": 27,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2016",
+        "engine size": "2000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6775359",
+      "title": "Used 2020 Porsche 911 Carrera S",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6775359/cid/672814/used-2020-porsche-911-carrera-s/",
+      "photoCount": 21,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2020",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Gentian Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6769634",
+      "title": "Used 2018 Honda Civic Hatchback (FK7)",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6769634/cid/672814/used-2018-honda-civic-hatchback-fk7/",
+      "photoCount": 32,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Manual",
+        "year": "2018",
+        "engine size": "1500cc",
+        "body type": "Hatchback",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6769207",
+      "title": "Used 2017 Aston Martin DB11 5.2 V12",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6769207/cid/672814/used-2017-aston-martin-db11-52-v12/",
+      "photoCount": 25,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Auto",
+        "year": "2017",
+        "engine size": "5200cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6756122",
+      "title": "Used Ferrari 812 Superfast",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6756122/cid/672814/used-ferrari-812-superfast/",
+      "photoCount": 16,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "F1 DCT",
+        "year": "2019",
+        "engine size": "6500cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Grey"
+      },
+      "issues": []
+    },
+    {
+      "id": "6732611",
+      "title": "Used 2019 Porsche Macan 2.0",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6732611/cid/672814/used-2019-porsche-macan-20/",
+      "photoCount": 24,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "2000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6724526",
+      "title": "Used 1999 Honda S2000 2.0",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6724526/cid/672814/used-1999-honda-s2000-20/",
+      "photoCount": 23,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Manual",
+        "year": "1999",
+        "engine size": "2000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Yellow"
+      },
+      "issues": []
+    },
+    {
+      "id": "6724492",
+      "title": "Used 2020 Lamborghini Huracan Evo LP640-4",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6724492/cid/672814/used-2020-lamborghini-huracan-evo-lp6404/",
+      "photoCount": 19,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2020",
+        "engine size": "5200cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Purple"
+      },
+      "issues": []
+    },
+    {
+      "id": "6720046",
+      "title": "Used 2019 BMW i8",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6720046/cid/672814/used-2019-bmw-i8/",
+      "photoCount": 23,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "3900cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6666822",
+      "title": "Used 2019 Porsche Cayman 2.0",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6666822/cid/672814/used-2019-porsche-cayman-20/",
+      "photoCount": 24,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "2000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Grey"
+      },
+      "issues": []
+    },
+    {
+      "id": "6660954",
+      "title": "(Sold) Used 2020 Porsche Cayenne 3.0 SUV",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6660954/cid/672814/sold-used-2020-porsche-cayenne-30-suv/",
+      "photoCount": 29,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2020",
+        "engine size": "3000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6658179",
+      "title": "(Sold) Used 2020 Volvo XC90 T8",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6658179/cid/672814/sold-used-2020-volvo-xc90-t8/",
+      "photoCount": 29,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2020",
+        "engine size": "2000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Grey"
+      },
+      "issues": []
+    },
+    {
+      "id": "6656097",
+      "title": "(Sold) Used 2017 Toyota Land Cruiser VX 4.5 V8",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6656097/cid/672814/sold-used-2017-toyota-land-cruiser-vx-45-v8/",
+      "photoCount": 21,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2017",
+        "engine size": "4500cc",
+        "body type": "SUV",
+        "engine type": "Diesel",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6617569",
+      "title": "Used 2015 Lamborghini Huracan LP610-4",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6617569/cid/672814/used-2015-lamborghini-huracan-lp6104/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2015",
+        "engine size": "5200cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Green"
+      },
+      "issues": []
+    },
+    {
+      "id": "6616667",
+      "title": "Used 2023 Maserati MC20 Cielo 3.0L Nettuno V6",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6616667/cid/672814/used-2023-maserati-mc20-cielo-30l-nettuno-v6/",
+      "photoCount": 27,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2023",
+        "engine size": "3000cc",
+        "body type": "Spider",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6616526",
+      "title": "Used 2020 Bentley Bentayga First Edition",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6616526/cid/672814/used-2020-bentley-bentayga-first-edition/",
+      "photoCount": 30,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2020",
+        "engine size": "4000cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6616071",
+      "title": "Used 2019 Aston Martin Vantage 4.0L",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6616071/cid/672814/used-2019-aston-martin-vantage-40l/",
+      "photoCount": 19,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "4000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6615899",
+      "title": "Used 2018 McLaren 720S",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6615899/cid/672814/used-2018-mclaren-720s/",
+      "photoCount": 24,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2018",
+        "engine size": "4000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6614219",
+      "title": "Used 2019 Porsche 911 Carrera S",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6614219/cid/672814/used-2019-porsche-911-carrera-s/",
+      "photoCount": 19,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6612894",
+      "title": "Used 2019 McLaren 720S by Local McLaren",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6612894/cid/672814/used-2019-mclaren-720s-by-local-mclaren/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "4000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Orange"
+      },
+      "issues": []
+    },
+    {
+      "id": "6611182",
+      "title": "Used 2019 Porsche 911 Carrera S",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6611182/cid/672814/used-2019-porsche-911-carrera-s/",
+      "photoCount": 23,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "PTS Signal Green"
+      },
+      "issues": []
+    },
+    {
+      "id": "6610879",
+      "title": "Used 1993 Toyota Supra MK IV",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6610879/cid/672814/used-1993-toyota-supra-mk-iv/",
+      "photoCount": 21,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "1993",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6609420",
+      "title": "Used 1998 Mitsubishi Lancer Evolution V",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6609420/cid/672814/used-1998-mitsubishi-lancer-evolution-v/",
+      "photoCount": 9,
+      "importedPhotos": 9,
+      "specs": {
+        "transmission": "Manual",
+        "year": "1998",
+        "engine size": "2000cc",
+        "body type": "Sedan",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6609329",
+      "title": "Used 2018 Honda N-Box Custom 660 Turbo (A)",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6609329/cid/672814/used-2018-honda-nbox-custom-660-turbo-a/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2018",
+        "engine size": "660cc",
+        "body type": "Sedan",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6608922",
+      "title": "Used 2017 Mercedes AMG CLA45 2.0 4MATIC",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6608922/cid/672814/used-2017-mercedes-amg-cla45-20-4matic/",
+      "photoCount": 29,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2017",
+        "engine size": "2000cc",
+        "body type": "Sedan",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6608899",
+      "title": "Used 2017 Lexus LX570",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6608899/cid/672814/used-2017-lexus-lx570/",
+      "photoCount": 30,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2017",
+        "engine size": "5700cc",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6608878",
+      "title": "Used 2019 McLaren 600LT Local McLaren KL",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6608878/cid/672814/used-2019-mclaren-600lt-local-mclaren-kl/",
+      "photoCount": 21,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2019",
+        "engine size": "3800cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6607666",
+      "title": "(Sold) Used 2020 Toyota Supra RZ",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6607666/cid/672814/sold-used-2020-toyota-supra-rz/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2021",
+        "engine size": "3000cc",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Red"
+      },
+      "issues": []
+    },
+    {
+      "id": "6607261",
+      "title": "Used 2020 Porsche Cayenne Turbo",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6607261/cid/672814/used-2020-porsche-cayenne-turbo/",
+      "photoCount": 32,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2020",
+        "engine size": "4000 CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6605757",
+      "title": "Used 2015 Lamborghini Huracan LP610-4",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6605757/cid/672814/used-2015-lamborghini-huracan-lp6104/",
+      "photoCount": 24,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2015",
+        "engine size": "5200CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Green"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532374",
+      "title": "Used 2010 Audi R8 V10 Quattro",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532374/cid/672814/used-2010-audi-r8-v10-quattro/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2010",
+        "engine size": "5200 CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532369",
+      "title": "Used 2019 Bentley Continental GT V12 6.0",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532369/cid/672814/used-2019-bentley-continental-gt-v12-60/",
+      "photoCount": 24,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2018",
+        "engine size": "6000 CC",
+        "body type": "Sedan",
+        "engine type": "Petrol",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532351",
+      "title": "Used 2016 BMW i8",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532351/cid/672814/used-2016-bmw-i8/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2018",
+        "engine size": "1500 CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532344",
+      "title": "(SOLD) Used 2020 Ferrari 812 Superfast Duke Dynamic",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532344/cid/672814/sold-used-2020-ferrari-812-superfast-duke-dynamic/",
+      "photoCount": 29,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2020",
+        "engine size": "6500 CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Red"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532330",
+      "title": "Used 2008 Ferrari F430 Spider",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532330/cid/672814/used-2008-ferrari-f430-spider/",
+      "photoCount": 22,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2008",
+        "engine size": "4300 CC",
+        "body type": "Convertible",
+        "engine type": "Petrol",
+        "color": "Red"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532320",
+      "title": "Used 2018 Honda Civic Type R FK8",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532320/cid/672814/used-2018-honda-civic-type-r-fk8/",
+      "photoCount": 21,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Manual",
+        "year": "2018",
+        "engine size": "2000 CC",
+        "body type": "Hatchback",
+        "engine type": "Petrol",
+        "color": "White"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532306",
+      "title": "(SOLD) Used 2023 Honda Civic Type R Fl5 (Mod)",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532306/cid/672814/sold-used-2023-honda-civic-type-r-fl5-mod/",
+      "photoCount": 30,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Manual",
+        "year": "2023",
+        "engine size": "2000 CC",
+        "body type": "Hatchback",
+        "engine type": "Petrol",
+        "color": "Sonic Gray Pearl"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532250",
+      "title": "(Sold) Used 2014 Lamborghini Aventador S LP700 6.5 V12",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532250/cid/672814/sold-used-2014-lamborghini-aventador-s-lp700-65-v12/",
+      "photoCount": 1,
+      "importedPhotos": 1,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2014",
+        "engine size": "6500 CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Grigio Estoque Metallic"
+      },
+      "issues": []
+    },
+    {
+      "id": "6532243",
+      "title": "Used 2022 Range Rover Autobiography P400 HSE",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6532243/cid/672814/used-2022-range-rover-autobiography-p400-hse/",
+      "photoCount": 17,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2022",
+        "engine size": "3000 CC",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Eiger Grey Metallic"
+      },
+      "issues": []
+    },
+    {
+      "id": "6531973",
+      "title": "Used 2019 Maserati Levante S Grandsport 3.0 Q4",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6531973/cid/672814/used-2019-maserati-levante-s-grandsport-30-q4/",
+      "photoCount": 20,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic (4WD)",
+        "year": "2019",
+        "engine size": "3000 CC",
+        "body type": "SUV",
+        "engine type": "Petrol",
+        "color": "Blue"
+      },
+      "issues": []
+    },
+    {
+      "id": "6531868",
+      "title": "Used 2021 Mercedes-Benz G350D",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6531868/cid/672814/used-2021-mercedesbenz-g350d/",
+      "photoCount": 28,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic",
+        "year": "2021",
+        "engine size": "3000 CC",
+        "body type": "SUV",
+        "engine type": "Diesel",
+        "color": "Black"
+      },
+      "issues": []
+    },
+    {
+      "id": "6531690",
+      "title": "(Sold) Used 2021 Porsche 911 Carrera 4",
+      "status": "Sold",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6531690/cid/672814/sold-used-2021-porsche-911-carrera-4/",
+      "photoCount": 22,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Automatic (4WD)",
+        "year": "2021",
+        "engine size": "3000 CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Race Track Grey"
+      },
+      "issues": []
+    },
+    {
+      "id": "6531624",
+      "title": "Used 2012 Toyota GT86 2.0 Turbo Manual",
+      "status": "Available",
+      "source": "https://www.luxedrive.com.my/showproducts/productid/6531624/cid/672814/used-2012-toyota-gt86-20-turbo-manual/",
+      "photoCount": 28,
+      "importedPhotos": 12,
+      "specs": {
+        "transmission": "Manual",
+        "year": "2012",
+        "engine size": "2000CC",
+        "body type": "Coupe",
+        "engine type": "Petrol",
+        "color": "Yellow"
+      },
+      "issues": []
+    }
+  ],
+  "errors": []
+}
