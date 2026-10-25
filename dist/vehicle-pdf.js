@@ -26,8 +26,9 @@
     const photo = (item, x, top, width, height) => {
       doc.setFillColor(242, 240, 233); doc.rect(x, top, width, height, 'F');
       if (!item.data) {
-        doc.setFont('helvetica', 'normal'); doc.setFontSize(10);
-        doc.text('Photo unavailable for PDF export', x + width / 2, top + height / 2, { align: 'center' });
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(width < 80 ? 8 : 10);
+        const lines = doc.splitTextToSize('Photo unavailable for PDF export', width - 8);
+        doc.text(lines, x + width / 2, top + height / 2 - (lines.length - 1) * 2, { align: 'center' });
         return;
       }
       const scale = Math.min(width / item.width, height / item.height);
@@ -52,12 +53,21 @@
     y += 4;
     paragraph('Contact: ' + (car.branch === 'Setia Alam' ? '+60 12-387 8655' : '+60 11-6569 9836'));
     paragraph('Prices, availability and specifications are subject to confirmation. This sheet is not a reservation or a binding quotation.', 9);
-    for (let i = 1; i < photos.length; i++) {
-      if ((i - 1) % 2 === 0) { next(); paragraph(`${car.year} ${car.name.slice(0, 70)} - photos`, 13, true); }
-      const top = (i - 1) % 2 === 0 ? 55 : 165;
-      photo(photos[i], 16, top, 178, 98);
-      doc.setFontSize(9); doc.text(`Photo ${i + 1} of ${photos.length}`, 16, top + 104);
-    }
+    // Keep the full gallery on page 2, even when long notes need continuation pages.
+    doc.insertPage(2); doc.setPage(2); page();
+    paragraph(`${car.year} ${car.name.slice(0, 70)} - all photos`, 13, true);
+    const gallery = photos.length ? photos : [{}];
+    const columns = gallery.length <= 2 ? 1 : gallery.length <= 6 ? 2 : 3;
+    const rowCount = Math.ceil(gallery.length / columns), gap = 7;
+    const cellWidth = (178 - gap * (columns - 1)) / columns;
+    const cellHeight = (212 - gap * (rowCount - 1)) / rowCount;
+    gallery.forEach((item, index) => {
+      const x = 16 + (index % columns) * (cellWidth + gap);
+      const top = 55 + Math.floor(index / columns) * (cellHeight + gap);
+      photo(item, x, top, cellWidth, cellHeight - 7);
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(8);
+      doc.text(`Photo ${index + 1} of ${gallery.length}${index === 0 ? ' - main photo' : ''}`, x, top + cellHeight - 2);
+    });
     const pages = doc.getNumberOfPages();
     for (let i = 1; i <= pages; i++) {
       doc.setPage(i); doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(105, 110, 100);
