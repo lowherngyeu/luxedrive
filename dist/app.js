@@ -1,6 +1,7 @@
+const money=value=>new Intl.NumberFormat('en-MY',{style:'currency',currency:'MYR',maximumFractionDigits:0}).format(value);
+if(document.querySelector("#vehicles")){
 const I=window.LuxeInventory,h=I.escape;
 let inventoryState=I.read(),vehicles=inventoryState.cars;
-const money=value=>new Intl.NumberFormat('en-MY',{style:'currency',currency:'MYR',maximumFractionDigits:0}).format(value);
 const whatsapp=car=>'https://wa.me/'+(car.branch==='Setia Alam'?'60123878655':'601165699836')+'?text='+encodeURIComponent(`Hello LuxeDrive, I'm interested in the ${car.year} ${car.name}, listed at ${money(car.price)}. Could you confirm availability and arrange a viewing?`);
 const category=['Unregistered','Consignment'].includes(document.body.dataset.category)?document.body.dataset.category:'All';
 const grid=document.querySelector('#vehicles');
@@ -26,6 +27,8 @@ grid.addEventListener('click',event=>{const button=event.target.closest('[data-i
 window.addEventListener('storage',event=>{if(event.key===I.KEY){inventoryState=I.read();vehicles=inventoryState.cars;if(dialog.open)dialog.close();render();}});
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+render();
+}
 const menu=document.querySelector('.menu');
 const collectionDropdown=document.querySelector('#collection-dropdown');
 document.addEventListener('click',event=>{if(collectionDropdown?.open&&!collectionDropdown.contains(event.target))collectionDropdown.open=false;});
@@ -45,4 +48,4 @@ function calculate(){
 document.querySelector('#finance-form')?.addEventListener('input',calculate);
 document.querySelector('#finance-form')?.addEventListener('change',calculate);
 document.querySelector('#finance-form')?.addEventListener('submit',event=>event.preventDefault());
-render();calculate();
+calculate();
