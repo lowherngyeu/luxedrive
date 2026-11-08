@@ -4,10 +4,11 @@ const I=window.LuxeInventory,h=I.escape;
 let inventoryState=I.read(),vehicles=inventoryState.cars;
 const whatsapp=car=>'https://wa.me/'+(car.branch==='Setia Alam'?'60123878655':'601165699836')+'?text='+encodeURIComponent(`Hello LuxeDrive, I'm interested in the ${car.year} ${car.name}, listed at ${money(car.price)}. Could you confirm availability and arrange a viewing?`);
 const category=['Unregistered','Consignment'].includes(document.body.dataset.category)?document.body.dataset.category:'All';
+const stockStatus=document.body.dataset.stockStatus;
 const grid=document.querySelector('#vehicles');
 function render(){
  const query=document.querySelector('#search').value.trim().toLowerCase(),sort=document.querySelector('#sort').value;
- const shown=vehicles.filter(v=>['Available','Incoming','Reserved'].includes(v.status)&&(category==='All'||v.category===category)&&`${v.brand} ${v.name} ${v.year}`.toLowerCase().includes(query));
+ const shown=vehicles.filter(v=>['Available','Incoming','Reserved'].includes(v.status)&&(category==='All'||v.category===category)&&(!stockStatus||v.status===stockStatus)&&`${v.brand} ${v.name} ${v.year}`.toLowerCase().includes(query));
  if(sort==='price-up')shown.sort((a,b)=>a.price-b.price);if(sort==='price-down')shown.sort((a,b)=>b.price-a.price);if(sort==='year')shown.sort((a,b)=>b.year-a.year);
  grid.innerHTML=shown.map(v=>`<article class="vehicle-card"><button class="detail-button" data-id="${h(v.id)}" aria-label="View details for ${v.year} ${h(v.name)}"><div class="vehicle-photo"><img src="${h(v.image)}" alt="${v.year} ${h(v.name)} at LuxeDrive" loading="lazy" width="600" height="420"><span class="photo-count">${v.images.length} photo${v.images.length===1?'':'s'}</span><span class="badge">${h(v.status!=='Available'?v.status.toUpperCase():v.category.toUpperCase())}</span></div><div class="vehicle-info"><p class="meta">${v.year} · ${h(v.brand)}</p><h3>${h(v.name)}</h3><p class="specs">${h(v.engine)} &nbsp;·&nbsp; ${h(v.mileage)}</p></div></button><div class="vehicle-bottom"><span>${money(v.price)}</span><a href="${whatsapp(v)}" target="_blank" rel="noopener" aria-label="Enquire about ${h(v.name)} on WhatsApp">Enquire <span>↗</span></a></div></article>`).join('');
  document.querySelector('#result-count').textContent=`${shown.length} selected vehicle${shown.length===1?'':'s'}`;document.querySelector('#empty').hidden=shown.length>0;
